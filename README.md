@@ -1,6 +1,10 @@
 # Solid-Pokedex
 A Pokedex PWA built with SolidJS and TypeScript
 
+SolidJS: Reactive JS library
+
+TypeScript: Open source JS language for adding static typing and optional type annotations
+
 ## Testing
 vitest - testing framework that includes runner, assertion engine, and mocking facilities
 
