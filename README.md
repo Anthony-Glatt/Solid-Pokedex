@@ -1,4 +1,6 @@
 # Solid-Pokedex
+After some new insights, I believe solidstart could better serve this applications purpose. After some more research, I'll make the changes tomorrow.
+
 A Pokedex PWA built with SolidJS and TypeScript
 
 SolidJS: Reactive JS library
