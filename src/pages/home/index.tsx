@@ -1,8 +1,9 @@
 import { Component } from "solid-js";
+import Card from '../../components/card/index';
 
 const Home: Component = () => {
   return (
-    <div></div>
+    <Card name="Pokemon" title="Pokemon" text="" />
   )
 }
 

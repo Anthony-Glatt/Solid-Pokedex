@@ -2,7 +2,8 @@ import { ParentComponent, lazy } from "solid-js";
 import { render } from "solid-js/web";
 import { Router, Route } from "@solidjs/router";
 
-const Home = lazy(() => import("./components/home/index"));
+const Home = lazy(() => import("./pages/home/index"));
+const Pokemon = lazy(() => import("./pages/pokemon/index"));
 
 const App: ParentComponent = (props) => {
   return (
@@ -19,6 +20,7 @@ const App: ParentComponent = (props) => {
 render(() => (
   <Router root={App}>
     <Route path="/" component={Home} />
+    <Route path="/pokemon" component={Pokemon} />
     {/* <Route path="*404" component={NotFound} /> */}
   </Router>
 ), document.getElementById("app")!);
