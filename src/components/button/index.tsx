@@ -2,7 +2,7 @@ import { ParentComponent } from "solid-js";
 
 interface Props {
   name: string;
-  onClick: () => {};
+  onClick: () => void;
 }
 
 const Button: ParentComponent<Props> = (props) => {
