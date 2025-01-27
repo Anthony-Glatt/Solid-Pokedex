@@ -11,20 +11,24 @@ const Pokemon: Component = () => {
     setSearchText(target.value);
   }
   return (
-    <>
-      <Input 
-        name="poke-search"
-        type="text"
-        placeholder="Search for a Pokemon"
-        onChange={handleSearchChange}
-      />
-      <Button 
-        name="search" 
-        onClick={() => {fetchPokemon(searchText()), fetchPokemonForm(searchText())}}
-      >
-        Search
-      </Button>
-    </>
+    <div>
+      <div class="search-container">
+        <Input 
+          name="poke-search"
+          type="text"
+          placeholder="Search for a Pokemon"
+          onChange={handleSearchChange}
+        />
+        <Button 
+          name="search" 
+          onClick={() => {fetchPokemon(searchText()), fetchPokemonForm(searchText())}}
+        >
+          Search
+        </Button>
+      </div>
+      <div class="">
+      </div>
+    </div>
   )
 }
 
