@@ -27,22 +27,3 @@ export const PokemonService = () => {
 
   return { pokemon, updatePokemon}
 }
-
-
-
-// export const createCounterStore = () => {
-//   const [state, setState] = createStore({
-//     pokemon: {
-//       id: 0,
-//       name: "",
-//       type: "",
-//       height: 0,
-//       weight: 0,
-//     }
-//   });
-
-//   const updatePokemon = (newPokemon: PokemonValues) => {
-//     setState();
-//   }
-//   return { state, updatePokemon };
-// };
