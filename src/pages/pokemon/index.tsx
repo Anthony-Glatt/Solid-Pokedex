@@ -1,4 +1,5 @@
 import { Component, createSignal } from "solid-js";
+import { useAppSelector } from "../../store";
 import { fetchPokemon, fetchPokemonForm } from "../../api/pokemon";
 import Button from "../../components/button/index";
 import Input from "../../components/input/index";
@@ -9,6 +10,8 @@ const Pokemon: Component = () => {
   const handleSearchChange = (e: Event) => {
     const target = e.target as HTMLButtonElement;
     setSearchText(target.value);
+    const {pokemonService:{ pokemon }} = useAppSelector();
+    console.log(pokemon);
   }
   return (
     <div>
