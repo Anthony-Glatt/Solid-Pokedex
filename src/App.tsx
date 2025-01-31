@@ -1,35 +1,36 @@
 import { ParentComponent, lazy } from "solid-js";
-import { render } from "solid-js/web";
 import { Router, Route } from "@solidjs/router";
 import { StoreProvider } from "./store";
 
-const Home = lazy(() => import("./pages/home/index"));
-const Pokemon = lazy(() => import("./pages/pokemon/index"));
-const Games = lazy(() => import("./pages/games/index"));
-const Locations = lazy(() => import("./pages/locations/index"));
+const routes = [
+  {
+    path: "/",
+    component: lazy(() => import("./pages/home/index"))
+  },
+  {
+    path: "pokemon",
+    component: lazy(() => import("./pages/pokemon/index"))
+  },
+  {
+    path: "locations",
+    component: lazy(() => import("./pages/locations/index"))
+  },
+  {
+    path: "games",
+    component: lazy(() => import("./pages/games/index"))
+  }
+]
 
 const App: ParentComponent = (props) => {
   return (
-    <>
-      <nav>
-        <a href="/">Home</a>
-      </nav>
+    <StoreProvider>
+      <Router>
+        {routes}
+        {/* <Route path="*404" component={NotFound} /> */}
+      </Router>
       {props.children}
-    </>
+    </StoreProvider>
   );
 }
-
-
-render(() => (
-  <StoreProvider>
-    <Router root={App}>
-      <Route path="/" component={Home} />
-      <Route path="/pokemon" component={Pokemon} />
-      <Route path="/games" component={Games} />
-      <Route path="/locations" component={Locations} />
-      {/* <Route path="*404" component={NotFound} /> */}
-    </Router>
-  </StoreProvider>
-), document.getElementById("app")!);
 
 export default App
