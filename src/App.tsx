@@ -1,6 +1,7 @@
 import { ParentComponent, lazy } from "solid-js";
 import { Router, Route } from "@solidjs/router";
 import { StoreProvider } from "./store";
+import Nav from './components/nav/index';
 
 const routes = [
   {
@@ -21,6 +22,25 @@ const routes = [
   }
 ]
 
+const navProps = [
+  {
+    href: "/",
+    text: "Home"
+  },
+  {
+    href: "/pokemon",
+    text: "Pokemon"
+  },
+  {
+    href: "/locations",
+    text: "Locations"
+  },
+  {
+    href: "/games",
+    text: "Games"
+  }
+]
+
 const App: ParentComponent = (props) => {
   return (
     <StoreProvider>
@@ -28,6 +48,7 @@ const App: ParentComponent = (props) => {
         {routes}
         {/* <Route path="*404" component={NotFound} /> */}
       </Router>
+      <Nav props={navProps} />
       {props.children}
     </StoreProvider>
   );
