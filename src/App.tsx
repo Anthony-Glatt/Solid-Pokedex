@@ -22,7 +22,7 @@ const routes = [
   }
 ]
 
-const navProps = [
+const navLinks = [
   {
     href: "/",
     text: "Home"
@@ -48,7 +48,7 @@ const App: ParentComponent = (props) => {
         {routes}
         {/* <Route path="*404" component={NotFound} /> */}
       </Router>
-      <Nav props={navProps} />
+      <Nav links={navLinks} />
       {props.children}
     </StoreProvider>
   );

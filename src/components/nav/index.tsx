@@ -1,12 +1,11 @@
 import { Component, For } from "solid-js";
 
 interface Props {
-  links: [
+  links:
     {
       href: string,
       text: string
-    }
-  ]
+    } []
 }
 
 const Nav: Component<Props> = (props) => {
