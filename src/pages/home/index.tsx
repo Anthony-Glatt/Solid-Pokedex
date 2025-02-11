@@ -3,7 +3,7 @@ import Card from '../../components/card/index';
 
 const Home: Component = () => {
   return (
-    <Card name="Pokemon" title="Pokemon" text="" />
+    <></>
   )
 }
 

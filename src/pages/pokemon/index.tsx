@@ -3,6 +3,7 @@ import { useAppSelector } from "../../store";
 import { fetchPokemon, fetchPokemonForm } from "../../api/pokemon";
 import Button from "../../components/button/index";
 import Input from "../../components/input/index";
+import Card from "../../components/card";
 
 const Pokemon: Component = () => {
   const [searchText, setSearchText] = createSignal('');
@@ -10,9 +11,10 @@ const Pokemon: Component = () => {
   const handleSearchChange = (e: Event) => {
     const target = e.target as HTMLButtonElement;
     setSearchText(target.value);
-    const {pokemonService:{ pokemon }} = useAppSelector();
-    console.log(pokemon);
   }
+
+  const {pokemonService: {pokemon}} = useAppSelector();
+
   return (
     <div>
       <div class="search-container">
@@ -29,8 +31,7 @@ const Pokemon: Component = () => {
           Search
         </Button>
       </div>
-      <div class="">
-      </div>
+      <Card class="" number={pokemon.id} name={pokemon.name} />
     </div>
   )
 }

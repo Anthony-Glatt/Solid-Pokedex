@@ -1,29 +1,31 @@
 import { Component } from "solid-js";
-import { A } from "@solidjs/router";
 
 
 interface Props {
+  class: string;
+  number: number;
+  // image: {
+  //   src: string;
+  //   alt: string;
+  // };
   name: string;
-  title: string;
-  text: string;
 }
 
 const Card: Component<Props> = (props) => {
-  const cardClasses = `card ${props.name ? `card-${props.name}` : ''}`;
+  const cardClasses = `card ${props.class ? `card-${props.class}` : ''}`;
 
   return (
-    <A href="pokemon">
       <div class={cardClasses}>
           <div class="body">
-            <div class="title">
-              {props.title}
+            <div class="number">
+              {props.number}
             </div>
-            <div class="text">
-              {props.text}
+            {/* <img src={props.image.src} alt={props.image.alt} /> */}
+            <div class="name">
+              {props.name}
             </div>
           </div>
       </div>
-    </A>
   );
 };
 

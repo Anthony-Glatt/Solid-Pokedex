@@ -23,6 +23,7 @@ export const PokemonService = () => {
 
   const updatePokemon = (pokemon: Pokemon) => {
     setPokemon(() => pokemon)
+    console.log(pokemon);
   }
 
   return { pokemon, updatePokemon}
