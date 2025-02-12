@@ -1,5 +1,5 @@
-import { Component, createSignal } from "solid-js";
-import { useAppSelector } from "../../store";
+import { Component, createSignal, For } from "solid-js";
+import { pokemonStore } from "../../store/pokemon";
 import { fetchPokemon, fetchPokemonForm } from "../../api/pokemon";
 import Button from "../../components/button/index";
 import Input from "../../components/input/index";
@@ -12,8 +12,6 @@ const Pokemon: Component = () => {
     const target = e.target as HTMLButtonElement;
     setSearchText(target.value);
   }
-
-  const {pokemonService: {pokemon}} = useAppSelector();
 
   return (
     <div>
@@ -31,7 +29,11 @@ const Pokemon: Component = () => {
           Search
         </Button>
       </div>
-      <Card class="" number={pokemon.id} name={pokemon.name} />
+      <For each={pokemonStore.pokemon} fallback={<div>Loading...</div>}>
+        {(pokemon, index) => (
+          <Card class={`pokemon-${index}`} number={pokemon.id} name={pokemon.name} />
+        )}
+      </For>
     </div>
   )
 }

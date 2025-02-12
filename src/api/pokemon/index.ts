@@ -1,4 +1,4 @@
-import { useAppSelector } from "../../store";
+import { setPokemonStore, pokemonStore } from "../../store/pokemon";
 
 const fetchPokemon = async (name: string) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${name}/`;
@@ -9,8 +9,7 @@ const fetchPokemon = async (name: string) => {
     }
     
     const json = await response.json();
-    console.log(json);
-    const {pokemonService:{ updatePokemon }} = useAppSelector();
+
     const newPokemon = {
       id: json.id,
       name: json.name,
@@ -18,9 +17,8 @@ const fetchPokemon = async (name: string) => {
       height: json.height,
       weight: json.weight
     }
-    updatePokemon(newPokemon);
-    console.log(newPokemon, 'new pokemon');
 
+    setPokemonStore('pokemon', pokemonStore.pokemon.length, newPokemon);
   } catch (error) {
   }
 }

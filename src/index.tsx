@@ -1,7 +1,6 @@
 import { lazy } from 'solid-js';
 import { render } from 'solid-js/web'
 import { Router, Route } from "@solidjs/router";
-import { StoreProvider } from "./store";
 import App from './App'
 
 const routes = [
@@ -30,9 +29,7 @@ if (!wrapper) {
 }
 
 render(() => (
-  <StoreProvider>
-    <Router root={App}>
-      {routes}
-    </Router>
-  </StoreProvider>
+  <Router root={App}>
+    {routes}
+  </Router>
 ), wrapper as HTMLElement)
