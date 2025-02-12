@@ -7,7 +7,13 @@ const [pokemonStore, setPokemonStore] = createStore({
       name: 'Charmander',
       type: ['fire'],
       height: 4,
-      weight: 4
+      weight: 4,
+      images: {
+        back_default: '',
+        back_shiny: '',
+        front_default: '',
+        front_shiny: '',
+      }
     }
   ]
 });

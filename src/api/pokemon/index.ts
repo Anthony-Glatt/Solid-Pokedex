@@ -32,6 +32,13 @@ const fetchPokemonForm = async (name: string) => {
     }
 
     const json = await response.json();
+    console.log(json);
+    const locatePokemon = pokemonStore.pokemon.find(pokemon => pokemon.id === json.id);
+
+    if (locatePokemon != undefined) {
+      setPokemonStore('pokemon', (pokemon) => pokemon.id === locatePokemon.id, 'images', json.sprites )
+      console.log(pokemonStore.pokemon)
+    }
   } catch (error) {
   }
 }

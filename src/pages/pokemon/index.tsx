@@ -31,7 +31,7 @@ const Pokemon: Component = () => {
       </div>
       <For each={pokemonStore.pokemon} fallback={<div>Loading...</div>}>
         {(pokemon, index) => (
-          <Card class={`pokemon-${index}`} number={pokemon.id} name={pokemon.name} />
+          <Card class={`pokemon-${index}`} number={pokemon.id} name={pokemon.name} images={pokemon.images} />
         )}
       </For>
     </div>
